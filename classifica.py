@@ -2,6 +2,7 @@ from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
 from keras.layers.normalization import BatchNormalization
 from keras.preprocessing.image import ImageDataGenerator
+
 import numpy as np
 import matplotlib.pyplot as plt
 from keras.preprocessing import image
@@ -50,7 +51,7 @@ base_teste = gerador_teste.flow_from_directory('dataset/test_set',
 #validation_steps -- numero de imagens processadas teste
 
 history = classificador.fit_generator(base_treinamento, steps_per_epoch = 903,
-                            epochs = 5, validation_data = base_teste,
+                            epochs = 10, validation_data = base_teste,
                             validation_steps = 300)
 #historico modelo
 print(history.history.keys())
